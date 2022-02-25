@@ -12,45 +12,82 @@ PARSER_END(Lexico)
 
 TOKEN : 
 {
-    <INT: "int">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
-    |
     <INT_ERROR: (((["0"-"9"])|(["a"-"b"]))(<INT>))|(((["0"-"9"])|(["a"-"b"]))(<INT>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
+    <INT: "int">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <FLOAT_ERROR: (((["0"-"9"])|(["a"-"b"]))(<FLOAT>))|(((["0"-"9"])|(["a"-"b"]))(<FLOAT>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <FLOAT: "float">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |  
+    <BOOLEAN_ERROR: (((["0"-"9"])|(["a"-"b"]))(<BOOLEAN>))|(((["0"-"9"])|(["a"-"b"]))(<BOOLEAN>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <BOOLEAN: "boolean">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <STRING_ERROR: (((["0"-"9"])|(["a"-"b"]))(<STRING>))|(((["0"-"9"])|(["a"-"b"]))(<STRING>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <STRING: "String">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <IF_ERROR: (((["0"-"9"])|(["a"-"b"]))(<IF>))|(((["0"-"9"])|(["a"-"b"]))(<IF>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <IF : "if">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <ELSE_ERROR: (((["0"-"9"])|(["a"-"b"]))(<ELSE>))|(((["0"-"9"])|(["a"-"b"]))(<ELSE>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <ELSE: "else">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <TRUE_ERROR: (((["0"-"9"])|(["a"-"b"]))(<TRUE>))|(((["0"-"9"])|(["a"-"b"]))(<TRUE>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <TRUE: "true">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <FALSE_ERROR: (((["0"-"9"])|(["a"-"b"]))(<FALSE>))|(((["0"-"9"])|(["a"-"b"]))(<FALSE>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <FALSE: "false">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <WHILE_ERROR: (((["0"-"9"])|(["a"-"b"]))(<WHILE>))|(((["0"-"9"])|(["a"-"b"]))(<WHILE>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    | 
     <WHILE: "while">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <CLASS_ERROR: (((["0"-"9"])|(["a"-"b"]))(<CLASS>))|(((["0"-"9"])|(["a"-"b"]))(<CLASS>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <CLASS: "class">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <PUBLIC_ERROR: (((["0"-"9"])|(["a"-"b"]))(<PUBLIC>))|(((["0"-"9"])|(["a"-"b"]))(<PUBLIC>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <PUBLIC: "public">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <STATIC_ERROR: (((["0"-"9"])|(["a"-"b"]))(<STATIC>))|(((["0"-"9"])|(["a"-"b"]))(<STATIC>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <STATIC: "static">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <VOID_ERROR: (((["0"-"9"])|(["a"-"b"]))(<VOID>))|(((["0"-"9"])|(["a"-"b"]))(<VOID>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <VOID: "void">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <MAIN_ERROR: (((["0"-"9"])|(["a"-"b"]))(<MAIN>))|(((["0"-"9"])|(["a"-"b"]))(<MAIN>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <MAIN: "main">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <RETURN_ERROR: (((["0"-"9"])|(["a"-"b"]))(<RETURN>))|(((["0"-"9"])|(["a"-"b"]))(<RETURN>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    | 
     <RETURN: "return">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <EXTENDS_ERROR: (((["0"-"9"])|(["a"-"b"]))(<EXTENDS>))|(((["0"-"9"])|(["a"-"b"]))(<EXTENDS>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     |
     <EXTENDS: "extends">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
+    <THIS_ERROR: (((["0"-"9"])|(["a"-"b"]))(<THIS>))|(((["0"-"9"])|(["a"-"b"]))(<THIS>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <THIS: "this">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
     |
-    <NEW: "new">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    <NEW_ERROR: (((["0"-"9"])|(["a"-"b"]))(<NEW>))|(((["0"-"9"])|(["a"-"b"]))(<NEW>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
     | 
+    <NEW: "new">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    |
+    <SYSTEM_ERROR: (((["0"-"9"])|(["a"-"b"]))(<SYSTEM>))|(((["0"-"9"])|(["a"-"b"]))(<SYSTEM>))>{System.out.println(matchedToken.beginLine+": Palabra reservada mal escrita "+image);}
+    |
     <SYSTEM: "System.out.println">{System.out.println(matchedToken.beginLine+": Palabra reservada "+image);}
+    
 }
 
 TOKEN : 
@@ -145,7 +182,7 @@ SPECIAL_TOKEN :
 
 void expresion(): {}
 {
-   (<INT>|<FLOAT>|<BOOLEAN>|<STRING>|<IF>|<ELSE>|<TRUE>|<FALSE>|<WHILE>|<CLASS>|<PUBLIC>|<STATIC>|<VOID>|<MAIN>|<RETURN>|<EXTENDS>|<THIS>|<NEW>|<SYSTEM>|<AND>|<MENORQUE>|<MAYORQUE>|<MENOROIGUALQUE>|<MAYOROIGUALQUE>|<MAS>|<MENOS>|<POR>|<ENTRE>|<DOT>|<NEGACION>|<ID>|<ENTEROS>|<REALES>|<CORCHETEIZQ>|<CORCHETEDER>|<PARENTESISIZQ>|<PARENTESISDER>|<LLAVEDER>|<LLAVEIZQ>|<PCOM>|<ASIGNACION> )+ <EOF>
+   (<INT>|<FLOAT>|<BOOLEAN>|<STRING>|<IF>|<ELSE>|<TRUE>|<FALSE>|<WHILE>|<CLASS>|<PUBLIC>|<STATIC>|<VOID>|<MAIN>|<RETURN>|<EXTENDS>|<THIS>|<NEW>|<SYSTEM>|<INT_ERROR>|<FLOAT_ERROR>|<BOOLEAN_ERROR>|<STRING_ERROR>|<IF_ERROR>|<ELSE_ERROR>|<TRUE_ERROR>|<FALSE_ERROR>|<WHILE_ERROR>|<CLASS_ERROR>|<PUBLIC_ERROR>|<STATIC_ERROR>|<VOID_ERROR>|<MAIN_ERROR>|<RETURN_ERROR>|<EXTENDS_ERROR>|<THIS_ERROR>|<NEW_ERROR>|<SYSTEM_ERROR>|<AND>|<MENORQUE>|<MAYORQUE>|<MENOROIGUALQUE>|<MAYOROIGUALQUE>|<MAS>|<MENOS>|<POR>|<ENTRE>|<DOT>|<NEGACION>|<ID>|<ENTEROS>|<REALES>|<CORCHETEIZQ>|<CORCHETEDER>|<PARENTESISIZQ>|<PARENTESISDER>|<LLAVEDER>|<LLAVEIZQ>|<PCOM>|<ASIGNACION> )+ <EOF>
 }
 
 
